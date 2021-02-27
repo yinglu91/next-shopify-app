@@ -2,15 +2,17 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { EmptyState, Layout, Page } from '@shopify/polaris';
 import { ResourcePicker, TitleBar } from '@shopify/app-bridge-react'
-//import { Title } from '@shopify/polaris/dist/types/latest/src/components/Page/components/Header/components';
 const img = 'https://cdn.shopify.com/s/files/1/0757/9955/files/empty-state.svg';
 
 const Index = () => {
   const [state, setState] = useState({ open: false })
   
   const handleSelection = (resources) => {
+    const idsFromResources = resources.selection.map((product) => product.id)
+    //["gid://shopify/Product/6543158149319", "gid://shopify/Product/6543158313159"]
+
     setState({ open: false });
-    console.log(resources);
+    console.log(idsFromResources);
   }
 
   return (
@@ -19,6 +21,7 @@ const Index = () => {
         title="Sample App"
         primaryAction={{
           content: 'Select products',
+          onAction: () => setState({open: true }),
         }}
       />
 
