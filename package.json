@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@shopify/app-bridge-react": "^1.29.0",
     "@shopify/koa-shopify-auth": "^4.0.0",
     "@shopify/polaris": "^6.1.0",
     "dotenv": "^8.2.0",
